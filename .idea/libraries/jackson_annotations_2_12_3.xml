@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jackson-annotations-2.12.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CSC305_Lab_2/jackson-annotations-2.12.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CSC305_Lab_2/jackson-core-2.12.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CSC305_Lab_2/jackson-databind-2.12.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CSC305_Lab_2/java-json.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/CSC305_Lab_2/java-json.jar!/" />
+    </SOURCES>
+  </library>
+</component>

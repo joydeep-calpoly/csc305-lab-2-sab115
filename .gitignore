@@ -2,4 +2,18 @@
 .gradle
 
 # Ignore Gradle build output directory
-build
+build/
+
+# Ignore IntelliJ IDEA files
+.idea/
+*.iml
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore dependency caches
+**/dependencies/

@@ -23,6 +23,14 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation("org.json:json:20240303")
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.0")
+
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

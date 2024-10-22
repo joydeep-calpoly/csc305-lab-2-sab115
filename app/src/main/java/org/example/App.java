@@ -3,12 +3,65 @@
  */
 package org.example;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        try{
+            InputStream inputStream = App.class.getClassLoader().getResourceAsStream("input1.json");
+
+            if (inputStream == null) {
+                throw new NullPointerException("Cannot find resource file input1.json");
+            }
+
+            String jsonContent = new Scanner(inputStream, StandardCharsets.UTF_8).useDelimiter("\\A").next();
+
+            JSONObject jsonObject = new JSONObject(jsonContent);
+
+            String name = jsonObject.getString("name");
+
+            JSONArray knownForArray = jsonObject.getJSONArray("knownFor");
+
+            List<String> knownFor = new ArrayList<>();
+            for (int i = 0; i < knownForArray.length(); i++) {
+                knownFor.add(knownForArray.getString(i));
+            }
+
+            JSONArray awardsArray = jsonObject.getJSONArray("awards");
+            List<Award> awards = new ArrayList<>();
+            for (int i = 0; i < awardsArray.length(); i++) {
+                JSONObject awardObj = awardsArray.getJSONObject(i);
+                String awardName = awardObj.getString("name");
+                int year = awardObj.getInt("year");
+                awards.add(new Award(awardName, year));
+            }
+
+            Person person = new Person(name, knownFor, awards);
+
+            System.out.println(person.getName() + "\n");
+
+            System.out.println("Known For:");
+            for (String known : person.getKnownFor()) {
+                System.out.println("\t" + known);
+            }
+
+            System.out.println("\nAwards:");
+            for (Award award : person.getAwards()) {
+                System.out.println("\t" + award.getName() + ", " + award.getYear());
+            }
+
+            // for testing
+            //System.out.println(jsonObject.toString(4)); // Pretty-print JSON for now
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

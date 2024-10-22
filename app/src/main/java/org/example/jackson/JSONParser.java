@@ -1,8 +1,8 @@
 package org.example.jackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.Award;
-import org.example.Person;
+import org.example.jackson.Award;
+import org.example.jackson.Person;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;

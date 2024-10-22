@@ -3,12 +3,12 @@ package org.example.jackson;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-public class Person {
+class Person {
     private final String name;
     private final List<String> knownFor;
     private final List<Award> awards;
 
-    public Person(
+    private Person(
             @JsonProperty("name") String name,
             @JsonProperty("knownFor") List<String> knownFor,
             @JsonProperty("awards") List<Award> awards) {

@@ -1,11 +1,11 @@
 package org.example;
 
-public class Award {
+class Award {
 
     private final String name;
     private final int year;
 
-    public Award(String name, int year) {
+    Award(String name, int year) {
         this.name = name;
         this.year = year;
     }
